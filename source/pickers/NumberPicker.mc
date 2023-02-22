@@ -11,7 +11,8 @@ class NumberPicker extends WatchUi.Picker {
         titleText as String,
         titleColor as Number,
         showSecondsLbl as Boolean,
-        initialValue as Number
+        initialValue as Number,
+        increment as Number
     ) {
         var title = new WatchUi.Text({
             :text=>titleText,
@@ -20,7 +21,7 @@ class NumberPicker extends WatchUi.Picker {
             :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM
         });
         
-        var factories = [new NumberPickerFactory(0, 999, 1)];
+        var factories = [new NumberPickerFactory(0, 995, increment)];
     
         var text = new WatchUi.Text({
             :text=> showSecondsLbl ? "sec" : "",
@@ -31,7 +32,7 @@ class NumberPicker extends WatchUi.Picker {
         Picker.initialize({
             :title=>title,
             :pattern=>factories,
-            :defaults=>[initialValue],
+            :defaults=>[initialValue / increment],
             :confirm=>text
         });
     }

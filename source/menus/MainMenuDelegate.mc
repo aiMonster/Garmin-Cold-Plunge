@@ -18,24 +18,26 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
             return;
         }
 
-        var label = null, color = null, initialValue = null, callback = null;
+        var label = null, color = null, initialValue = null, callback = null, increment = null;
         var showSeconds = false;
 
         if (id.equals("plunge_duration")) {
             label = TimerViewManager.PLUNGE_TITLE;
             color = ColorManager.get(TimerViewManager.PLUNGE_COLOR);
             initialValue = TimerManager.getPlungeDuration();
+            increment = 5;
             showSeconds = true;
             callback = method(:updatePlungeDurationSettings); 
         } else if(id.equals("prepare_duration")) {
             label = TimerViewManager.PREPARE_TITLE;
             color = ColorManager.get(TimerViewManager.PREPARE_COLOR);
             initialValue = TimerManager.getPrepareDuration();
+            increment = 1;
             showSeconds = true;
             callback = method(:updatePrepareDurationSettings); 
         }
 
-        var picker = new NumberPicker(label, color, showSeconds, initialValue);
+        var picker = new NumberPicker(label, color, showSeconds, initialValue, increment);
         var delegate = new NumberPickerDelegate(callback);
 
         WatchUi.pushView(picker, delegate, WatchUi.SLIDE_IMMEDIATE);

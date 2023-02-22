@@ -1,5 +1,5 @@
 <properties>
-    <property id="appVersion" type="string">0.1.0</property>
+    <property id="appVersion" type="string">0.2.0</property>
     <property id="plungeDuration" type="number">180</property>
     <property id="prepareDuration" type="number">15</property>
     <property id="recordActivity" type="boolean">true</property>

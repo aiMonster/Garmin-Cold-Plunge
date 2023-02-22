@@ -1,0 +1,18 @@
+<layout id="MainLayout">
+    <label
+        id="type_title"
+        text="PLUNGE"
+        x="center"
+        y="20%"
+        font="Gfx.FONT_MEDIUM"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
+    <label
+        id="current_timer"
+        text="0:30"
+        x="center"
+        y="center"
+        font="Gfx.FONT_NUMBER_THAI_HOT"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
+</layout>

@@ -1,0 +1,18 @@
+<layout id="CompletedPlainLayout">
+    <label
+        id="completed_lbl"
+        text="COMPLETED"
+        x="center"
+        y="center"
+        font="Gfx.FONT_LARGE"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
+    <label
+        id="tooltip_lbl"
+        text="Press start/stop to exit"
+        x="center"
+        y="60%"
+        font="Gfx.FONT_XTINY"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
+</layout>

@@ -25,8 +25,15 @@ class ColdPlungeView extends WatchUi.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-        setTimerValue(TimerManager.getPrepareDuration());
-        setPrepareLabel();
+        var prepareDuration = TimerManager.getPrepareDuration();
+
+        if (prepareDuration > 0) {
+            setTimerValue(prepareDuration);
+            setPrepareLabel();
+        } else {
+            setTimerValue(TimerManager.getPlungeDuration());
+            setPlungeLabel();
+        }
     }
 
     // Update the view

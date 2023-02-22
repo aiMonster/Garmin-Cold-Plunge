@@ -53,7 +53,14 @@ class ColdPlungeDelegate extends WatchUi.BehaviorDelegate {
 
     // Starts countdown
     function startCountdown() {
-        _currentDuration = TimerManager.getPrepareDuration() - 1;
+        var prepareDuration = TimerManager.getPrepareDuration();
+
+        if (prepareDuration > 0) {
+            _currentDuration = prepareDuration - 1;
+        } else {
+            _currentDuration = TimerManager.getPlungeDuration() - 1;
+            _prepareStepCompleted = true;
+        }
 
         callAttention(LONG_DURATION);
 

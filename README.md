@@ -5,6 +5,7 @@ https://apps.garmin.com/en-US/apps/9b443887-938f-42cc-a3f6-da25efa89167
 ![Samples](screenshots/cover.png)
 
 # Version History
+1.1.0 - Add heart rate  
 **1.0.0 - Initial public version**  
 0.4.1 - Update unique app id  
 0.4.0 - Add separate Completed screen to be compatible with Instinct devices  

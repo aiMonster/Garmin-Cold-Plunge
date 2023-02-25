@@ -1,9 +1,12 @@
 import Toybox.WatchUi;
 import Toybox.Graphics;
+import Toybox.Activity;
+import Toybox.Timer;
 
 class ColdPlungeView extends WatchUi.View {
     private var _typeTitleElement;
     private var _currentTimerElement;
+    private var _heartRateElement;
 
     // Constructor
     function initialize() {
@@ -16,9 +19,14 @@ class ColdPlungeView extends WatchUi.View {
 
         _typeTitleElement = findDrawableById("type_title");
         _currentTimerElement = findDrawableById("current_timer");
+        _heartRateElement = findDrawableById("heart_rate");
 
         _typeTitleElement.setColor(ColorManager.get(Graphics.COLOR_BLUE));
         _currentTimerElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
+        _heartRateElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
+
+        updateHeartRate();
+        new Timer.Timer().start(method(:updateHeartRate), 1000, true);
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -67,6 +75,14 @@ class ColdPlungeView extends WatchUi.View {
         var current = TimerViewManager.formatTime(value/60, value%60);
         _currentTimerElement.setText(current);
 
+        WatchUi.requestUpdate();
+    }
+
+    function updateHeartRate() {
+        var heartRate = Activity.getActivityInfo().currentHeartRate;
+        heartRate = heartRate == null ? "--" : heartRate.format("%i");
+        
+        _heartRateElement.setText(heartRate);
         WatchUi.requestUpdate();
     }
 }

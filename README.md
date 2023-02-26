@@ -5,6 +5,7 @@ https://apps.garmin.com/en-US/apps/9b443887-938f-42cc-a3f6-da25efa89167
 ![Samples](screenshots/cover.png)
 
 # Version History
+1.1.1 - Fix static heart rate value  
 1.1.0 - Add heart rate  
 **1.0.0 - Initial public version**  
 0.4.1 - Update unique app id  
